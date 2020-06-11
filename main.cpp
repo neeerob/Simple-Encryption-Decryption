@@ -5,9 +5,12 @@ class System
 {
     public:
 
-    string message;
+    char message[100];
+    char temporaryMess;
     int length;
     int password;
+    int i;
+
     
 
     void encryption();
@@ -24,8 +27,42 @@ void System :: encryption()
         }
         
         cout<<"Your message will encrypt with your password!"<<endl;
-        cout<<"Enter a message to encrypt: "<<endl;
+        cout<<"Enter a message to encrypt![Note: You need to write '-' in space! ] "<<endl;
+        cout<<"Message : ";
         cin>>message;
+
+
+    
+       for(i = 0; message[i] != '\0'; ++i)
+    {
+        temporaryMess = message[i];
+        
+        if(temporaryMess >= 'a' && temporaryMess <= 'z'){
+            temporaryMess = temporaryMess + password;
+            
+            if(temporaryMess > 'z'){
+                temporaryMess = temporaryMess - 'z' + 'a' - 1;
+            }
+            
+            message[i] = temporaryMess;
+        }
+        else if(temporaryMess >= 'A' && temporaryMess <= 'Z'){
+            temporaryMess = temporaryMess + password;
+            
+            if(temporaryMess > 'Z'){
+                temporaryMess = temporaryMess - 'Z' + 'A' - 1;
+            }
+            
+            message[i] = temporaryMess;
+        }
+    }
+
+    
+    cout << "Encrypted message -> " << message<<endl;
+    cout<<endl;
+        
+
+
 }
 
 
