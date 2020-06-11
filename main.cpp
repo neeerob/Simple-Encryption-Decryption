@@ -16,6 +16,49 @@ class System
     void encryption();
     void decreption();
 };
+void System :: decreption()
+{
+    cout<<"Enter your Password : ";
+    cin>>password;
+    if(password>10 || password <= 0)
+        {
+            cout<<"You entered more then 1 degit!!"<<endl;
+            return decreption();
+        }
+    cout<<"Enter your message : ";
+    cin>>message;
+
+
+       for(i = 0; message[i] != '\0'; ++i)
+    {
+        temporaryMess = message[i];
+        
+        if(temporaryMess >= 'a' && temporaryMess <= 'z'){
+            temporaryMess = temporaryMess - password;
+            
+            if(temporaryMess > 'z'){
+                temporaryMess = temporaryMess - 'z' + 'a' - 1;
+            }
+            
+            message[i] = temporaryMess;
+        }
+        else if(temporaryMess >= 'A' && temporaryMess <= 'Z'){
+            temporaryMess = temporaryMess - password;
+            
+            if(temporaryMess > 'Z'){
+                temporaryMess = temporaryMess - 'Z' + 'A' - 1;
+            }
+            
+            message[i] = temporaryMess;
+        }
+    }
+
+    cout << "Decrypted message -> " << message<<endl;
+    cout<<endl;
+
+
+
+}
 void System :: encryption()
 {
     cout<<"Enter password : ";
@@ -92,6 +135,7 @@ int main()
 
         cout<<"You want to decrept your message !"<<endl;
         cout<<"[Note:You need to enter your 1 digit password that you previously entered to encrypt!]"<<endl;
+        runSystem.decreption();
 
 
 
@@ -100,6 +144,7 @@ int main()
 
     
     default:
+
         break;
     }
 }
