@@ -60,7 +60,7 @@ void System :: decreption()
 
 }
 void System :: encryption()
-{
+{   
     cout<<"Enter password : ";
     cin>>password;
         if(password>10 || password <= 0)
@@ -113,8 +113,11 @@ int main()
 {
     System runSystem;
     int option,password;
+    cout<<endl;
+    cout<<endl;
     cout<<"Enter your option: "<<endl;
     cout<<"1)Encrypt message 2)Decrept message "<<endl;
+    cout<<"Option : ";
     cin>>option;
     switch (option)
     {
@@ -144,7 +147,6 @@ int main()
 
     
     default:
-
         break;
     }
 }
