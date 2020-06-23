@@ -115,8 +115,13 @@ int main()
     int option,password;
     cout<<endl;
     cout<<endl;
+    while (true)
+    {
+        
+    
+    
     cout<<"Enter your option: "<<endl;
-    cout<<"1)Encrypt message 2)Decrept message "<<endl;
+    cout<<"1)Encrypt message 2)Decrept message 3)Exit "<<endl;
     cout<<"Option : ";
     cin>>option;
     switch (option)
@@ -144,10 +149,18 @@ int main()
 
         break;
 
+    case 3:
+
+        cout<<"exit successfully"<<endl;
+        return 0;
+
+
 
     
     default:
+        cout<<"Something is wrong! Try again!"<<endl;
         break;
+    }
     }
 }
 
