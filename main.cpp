@@ -121,7 +121,7 @@ int main()
     
     
     cout<<"Enter your option: "<<endl;
-    cout<<"1)Encrypt message 2)Decrept message 3)Exit "<<endl;
+    cout<<"1)Encrypt message 2)Decrept message 3)Forgot password 3)Exit "<<endl;
     cout<<"Option : ";
     cin>>option;
     switch (option)
@@ -148,13 +148,19 @@ int main()
 
 
         break;
-
     case 3:
+        
+        cout<<"Forgot password?"<<endl;
+        cout<<"You need to past your Encrypted message"<<endl;
+
+
+
+    case 4:
 
         cout<<"exit successfully"<<endl;
         return 0;
 
-
+  
 
     
     default:
