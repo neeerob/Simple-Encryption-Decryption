@@ -117,9 +117,6 @@ int main()
     cout<<endl;
     while (true)
     {
-        
-    
-    
     cout<<"Enter your option: "<<endl;
     cout<<"1)Encrypt message 2)Decrept message 3)Forgot password 3)Exit "<<endl;
     cout<<"Option : ";
