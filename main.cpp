@@ -15,6 +15,7 @@ class System
 
     void encryption();
     void decreption();
+    void forgotPass();
 };
 void System :: decreption()
 {
@@ -55,6 +56,56 @@ void System :: decreption()
 
     cout << "Decrypted message -> " << message<<endl;
     cout<<endl;
+
+
+
+}
+void System :: forgotPass()
+{
+    //problem v0.1
+    int brutPass[]={0,1,2,3,4,5,6,7,8,9};
+    
+    cout<<"Your message will break by Brute-force "<<endl;
+    cout<<"It may take some time 🐸"<<endl;
+    cout<<"Enter your message : ";
+    cin>>message;
+
+    for(int z=0; z<10;z++)
+ {
+
+
+       for(i = 0; message[i] != '\0'; ++i)
+    {
+        z++;
+        brutPass[z] = password;
+
+
+
+        temporaryMess = message[i];
+        
+        if(temporaryMess >= 'a' && temporaryMess <= 'z'){
+            temporaryMess = temporaryMess - password;
+            
+            if(temporaryMess > 'z'){
+                temporaryMess = temporaryMess - 'z' + 'a' - 1;
+            }
+            
+            message[i] = temporaryMess;
+        }
+        else if(temporaryMess >= 'A' && temporaryMess <= 'Z'){
+            temporaryMess = temporaryMess - password;
+            
+            if(temporaryMess > 'Z'){
+                temporaryMess = temporaryMess - 'Z' + 'A' - 1;
+            }
+            
+            message[i] = temporaryMess;
+            
+        }
+        cout << "Decrypted message -> " << message<<endl;
+        cout<<endl;
+    }
+ }
 
 
 
@@ -149,6 +200,7 @@ int main()
         
         cout<<"Forgot password?"<<endl;
         cout<<"You need to past your Encrypted message"<<endl;
+        runSystem.forgotPass();
 
 
 
